@@ -39,3 +39,38 @@ function launchConfetti() {
 function showImage() {
     document.getElementById("billetImage").classList.remove("hidden");
 }
+
+function fakeFirework() {
+    // Feu d'artifice simple
+    for (let i = 0; i < 80; i++) {
+        let fire = document.createElement("div");
+        fire.style.position = "fixed";
+        fire.style.width = "8px";
+        fire.style.height = "8px";
+        fire.style.backgroundColor =
+            "hsl(" + Math.random() * 360 + ", 100%, 50%)";
+        fire.style.left = window.innerWidth / 2 + "px";
+        fire.style.top = window.innerHeight / 2 + "px";
+        fire.style.borderRadius = "50%";
+        fire.style.transition = "all 1s ease-out";
+
+        document.body.appendChild(fire);
+
+        setTimeout(() => {
+            fire.style.left =
+                window.innerWidth / 2 +
+                (Math.random() - 0.5) * 600 + "px";
+            fire.style.top =
+                window.innerHeight / 2 +
+                (Math.random() - 0.5) * 600 + "px";
+            fire.style.opacity = "0";
+        }, 10);
+
+        setTimeout(() => {
+            fire.remove();
+        }, 1000);
+    }
+
+    document.getElementById("fakeMessage").textContent =
+        "ouueeee pas mal le feu d'artifice";
+}
