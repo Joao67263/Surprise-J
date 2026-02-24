@@ -72,5 +72,5 @@ function fakeFirework() {
     }
 
     document.getElementById("fakeMessage").textContent =
-        "ouueeee pas mal le feu d'artifice";
+        "ouueeee pas mal le feu d'artifice, essaye encore";
 }
