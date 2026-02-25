@@ -91,6 +91,6 @@ function fakeFirework() {
     // Message seulement si le jeu n'est pas fini
     if (!gameFinished) {
         document.getElementById("fakeMessage").textContent =
-            "ouueeee pas mal le feu d'artifice";
+            "ouueeee pas mal le feu d'artifice, mais je n'ai toujours pas mon document moi...";
     }
 }
