@@ -1,3 +1,5 @@
+let gameFinished = false;
+
 function checkCode(correctCode, nextPage) {
     const userInput = document.getElementById("codeInput").value;
     const errorMessage = document.getElementById("errorMessage");
@@ -9,14 +11,14 @@ function checkCode(correctCode, nextPage) {
     }
 }
 
-// Confetti animation simple
+// Confetti (vraie action)
 function launchConfetti() {
     for (let i = 0; i < 100; i++) {
         let confetti = document.createElement("div");
         confetti.style.position = "fixed";
         confetti.style.width = "10px";
         confetti.style.height = "10px";
-        confetti.style.backgroundColor = 
+        confetti.style.backgroundColor =
             "hsl(" + Math.random() * 360 + ", 100%, 50%)";
         confetti.style.left = Math.random() * window.innerWidth + "px";
         confetti.style.top = "-10px";
@@ -40,8 +42,23 @@ function showImage() {
     document.getElementById("billetImage").classList.remove("hidden");
 }
 
+function realClick() {
+    launchConfetti();
+    showImage();
+
+    // On considère que le jeu est fini
+    gameFinished = true;
+
+    // Supprime le faux message s'il existe
+    document.getElementById("fakeMessage").textContent = "";
+
+    // Affiche le message final
+    document.getElementById("finalMessage").textContent =
+        "MERCI ! Tu as retrouvé mon document perdu ! Bon, ce n'est plus une surprise mais au moins tu as pu jouer un peu... Bisous loustique";
+}
+
+// Faux bouton
 function fakeFirework() {
-    // Feu d'artifice simple
     for (let i = 0; i < 80; i++) {
         let fire = document.createElement("div");
         fire.style.position = "fixed";
@@ -71,6 +88,9 @@ function fakeFirework() {
         }, 1000);
     }
 
-    document.getElementById("fakeMessage").textContent =
-        "ouueeee pas mal le feu d'artifice, mais j'ai toujours pas récupéré mon document moi";
+    // Message seulement si le jeu n'est pas fini
+    if (!gameFinished) {
+        document.getElementById("fakeMessage").textContent =
+            "ouueeee pas mal le feu d'artifice";
+    }
 }
