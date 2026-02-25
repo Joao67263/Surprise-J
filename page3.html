@@ -10,19 +10,19 @@
 <div class="container">
     <p>
         Bravo d’être arrivé jusqu’à là, maintenant pour avancer,
-        clique <span onclick="launchConfetti(); showImage();" style="cursor:pointer;">ici</span> :
+        clique <span onclick="realClick()" style="cursor:pointer;">ici</span> :
     </p>
 
     <img id="billetImage" src="billet.jpg" class="hidden">
 
     <br><br>
 
-    <!-- Bouton leurre -->
     <button onclick="fakeFirework()">
-        Bouton
+        Clique ici pour continuer
     </button>
 
     <p id="fakeMessage"></p>
+    <p id="finalMessage"></p>
 
 </div>
 </body>
