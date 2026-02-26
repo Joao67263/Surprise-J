@@ -94,3 +94,12 @@ function fakeFirework() {
             "ouueeee pas mal le feu d'artifice, mais je n'ai toujours pas mon document moi...";
     }
 }
+
+function toggleHint(id) {
+    const hint = document.getElementById(id);
+    if (hint.style.display === "block") {
+        hint.style.display = "none";
+    } else {
+        hint.style.display = "block";
+    }
+}
