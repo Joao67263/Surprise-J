@@ -55,6 +55,10 @@ function realClick() {
     // Affiche le message final
     document.getElementById("finalMessage").textContent =
         "MERCI ! Tu as retrouvé mon document perdu ! Bon, ce n'est plus une surprise mais au moins tu as pu jouer un peu... Bisous loustique";
+
+    // Supprime tous les boutons indice et textes indice
+const hints = document.querySelectorAll(".hint, .hint-button");
+hints.forEach(element => element.remove());
 }
 
 // Faux bouton
