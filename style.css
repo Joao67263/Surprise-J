@@ -46,3 +46,20 @@ img {
     margin-top: 20px;
     max-width: 300px;
 }
+
+
+.hint {
+    display: none;
+    margin-top: 8px;
+    font-style: italic;
+    color: #444;
+}
+
+.hint-button {
+    background-color: #999;
+    margin-top: 10px;
+}
+
+.hint-button:hover {
+    background-color: #777;
+}
